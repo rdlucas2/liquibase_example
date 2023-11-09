@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Changeset to create a new table -->
+    <changeSet id="1" author="yourname">
+        <createTable tableName="hello_world">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="greeting" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Changeset to insert records into the new table -->
+    <changeSet id="2" author="yourname">
+        <insert tableName="hello_world">
+            <column name="greeting" value="Hello"/>
+        </insert>
+        <insert tableName="hello_world">
+            <column name="greeting" value="World"/>
+        </insert>
+        <insert tableName="hello_world">
+            <column name="greeting" value="Liquibase"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
